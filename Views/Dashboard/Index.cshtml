@@ -1,0 +1,145 @@
+@model AIInterviewPractice.Models.DashboardStats
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row min-vh-75 mt-4 fade-in">
+    <div class="col-12">
+        <h2 class="mb-4 fw-bold text-dark">Performance Dashboard</h2>
+        
+        <div class="row mb-5 g-4">
+            <div class="col-md-3">
+                <div class="card-modern text-center h-100 p-4 border-0" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), white);">
+                    <div class="text-secondary fw-bold text-uppercase mb-2" style="font-size:0.85rem; letter-spacing: 0.5px;">Total Interviews</div>
+                    <h2 class="display-5 fw-bold text-primary mb-0">@Model.TotalInterviews</h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-modern text-center h-100 p-4 border-0" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), white);">
+                    <div class="text-secondary fw-bold text-uppercase mb-2" style="font-size:0.85rem; letter-spacing: 0.5px;">Average Score</div>
+                    <h2 class="display-5 fw-bold text-dark mb-0">@Model.AverageScore.ToString("F1")<span class="fs-4 text-muted">%</span></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-modern text-center h-100 p-4 border-0" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), white);">
+                    <div class="text-success fw-bold text-uppercase mb-2" style="font-size:0.85rem; letter-spacing: 0.5px;">Best Topic</div>
+                    <h4 class="fw-bold text-success mb-0 text-truncate" title="@Model.BestCategory">@Model.BestCategory</h4>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card-modern text-center h-100 p-4 border-0" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), white);">
+                    <div class="text-danger fw-bold text-uppercase mb-2" style="font-size:0.85rem; letter-spacing: 0.5px;">Needs Focus</div>
+                    <h4 class="fw-bold text-danger mb-0 text-truncate" title="@Model.WeakCategory">@Model.WeakCategory</h4>
+                </div>
+            </div>
+        </div>
+
+    @if (Model.TotalInterviews > 0 && Model.CategoryPerformance.Any())
+    {
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card-modern h-100">
+                    <h5 class="mb-4 fw-bold text-dark">Category Performance</h5>
+                    <div style="position: relative; height:300px; width:100%">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-modern h-100">
+                    <h5 class="mb-4 fw-bold text-dark">Score History</h5>
+                    <div style="position: relative; height:300px; width:100%">
+                        <canvas id="historyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @section Scripts {
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var ctxCategory = document.getElementById('categoryChart').getContext('2d');
+                    var ctxHistory = document.getElementById('historyChart').getContext('2d');
+                    
+                    var catLabels = [];
+                    var catData = [];
+                    
+                    @foreach (var kp in Model.CategoryPerformance)
+                    {
+                        @:catLabels.push('@kp.Key');
+                        @:catData.push(@kp.Value);
+                    }
+
+                    var histLabels = [];
+                    var histData = [];
+
+                    @foreach (var lbl in Model.ScoreHistoryLabels)
+                    {
+                        @:histLabels.push('@lbl');
+                    }
+                    @foreach (var score in Model.ScoreHistory)
+                    {
+                        @:histData.push(@score);
+                    }
+
+                    new Chart(ctxCategory, {
+                        type: 'bar',
+                        data: {
+                            labels: catLabels,
+                            datasets: [{
+                                label: 'Average Score (%)',
+                                data: catData,
+                                backgroundColor: 'rgba(13, 110, 253, 0.7)',
+                                borderColor: 'rgba(13, 110, 253, 1)',
+                                borderWidth: 1,
+                                borderRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: { beginAtZero: true, max: 100, grid: { display: true } },
+                                x: { grid: { display: false } }
+                            },
+                            plugins: { legend: { display: false } }
+                        }
+                    });
+
+                    new Chart(ctxHistory, {
+                        type: 'line',
+                        data: {
+                            labels: histLabels,
+                            datasets: [{
+                                label: 'Score History',
+                                data: histData,
+                                fill: true,
+                                backgroundColor: 'rgba(25, 135, 84, 0.2)',
+                                borderColor: 'rgba(25, 135, 84, 1)',
+                                tension: 0.3
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: { beginAtZero: true, max: 100 }
+                            },
+                            plugins: { legend: { display: false } }
+                        }
+                    });
+                });
+            </script>
+        }
+    }
+    else
+    {
+        <div class="card-modern text-center p-5 mt-5 border-0" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), white);">
+            <div class="mb-4" style="font-size: 3rem;">📊</div>
+            <h3 class="fw-bold mb-3">No Analytics Yet</h3>
+            <p class="text-muted fs-5 mb-4">Ready to test yourself? Complete some interviews to generate your personal performance charts.</p>
+            <a asp-controller="Interview" asp-action="Setup" class="btn btn-primary-modern px-4 py-2">Start an interview</a>
+        </div>
+    }
+    </div>
+</div>

@@ -1,0 +1,61 @@
+@model List<AIInterviewPractice.Models.InterviewQuestion>
+@{
+    ViewData["Title"] = "Interview Questions";
+    var sessionId = ViewBag.SessionId as string;
+    var timeMinutes = ViewBag.TimeMinutes != null ? (int)ViewBag.TimeMinutes : 10;
+}
+
+<div class="row min-vh-75 justify-content-center mt-4 fade-in">
+    <div class="col-md-10">
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+            <h2 class="fw-bold mb-0">Interview Questions</h2>
+            <div class="text-end ms-auto me-4">
+                <div class="text-muted small mb-1 fw-bold">Interview Timer Remaining</div>
+                <div id="interviewTimer" class="fw-bold text-danger fs-4 font-monospace" data-minutes="@timeMinutes">@timeMinutes:00</div>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">@Model.Count Questions</span>
+        </div>
+        <p class="text-muted mb-4 fs-5">Please provide your answers below. You can type or use the audio recorder.</p>
+
+        <form asp-action="Submit" method="post" id="interviewForm">
+            <input type="hidden" name="sessionId" value="@sessionId" />
+
+            @for (int i = 0; i < Model.Count; i++)
+        {
+            var q = Model[i];
+            <div class="card-modern card-accent-border mb-5">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm" style="width: 32px; height: 32px; font-size: 0.9rem;">
+                        @(i + 1)
+                    </div>
+                    <h5 class="mb-0 ms-3 fw-bold text-dark">Question @(i + 1)</h5>
+                </div>
+                
+                <div class="card-body p-0 mt-3">
+                    <p class="fs-5 fw-medium text-dark mb-4">@q.Text</p>
+                    
+                    <div class="mb-4">
+                        <textarea name="answerTexts" class="form-control-modern w-100 answer-textarea" rows="5" placeholder="Type your comprehensive answer here..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex align-items-center bg-light p-3 rounded-3 mt-3 border">
+                        <button type="button" class="btn btn-outline-danger me-3 record-btn d-flex align-items-center" style="border-radius: 8px;">
+                            <span class="fs-5 me-2">🎤</span> Record Answer
+                        </button>
+                        <span class="text-secondary recording-status fw-medium" style="display:none;">
+                            <span class="spinner-grow spinner-grow-sm text-danger me-2" role="status" aria-hidden="true"></span>
+                            Listening... speak clearly.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="text-end mt-5 mb-5 pb-5">
+            <button type="submit" class="btn btn-accent-modern btn-lg px-5 py-3 fs-5 shadow-sm">
+                Submit All Answers <span class="ms-2">✓</span>
+            </button>
+        </div>
+    </form>
+    </div>
+</div>

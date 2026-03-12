@@ -1,0 +1,60 @@
+@model List<AIInterviewPractice.Models.InterviewSession>
+@{
+    ViewData["Title"] = "Interview History";
+}
+
+<div class="row min-vh-75 mt-4 fade-in">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold text-dark mb-0">Interview History</h2>
+            <a asp-controller="Interview" asp-action="Setup" class="btn btn-primary-modern shadow-sm px-4">New Interview <span class="ms-2">+</span></a>
+        </div>
+
+        @if (Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-modern w-100">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th class="text-center">Questions</th>
+                            <th class="text-center">Score</th>
+                            <th class="text-end pe-4">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var session in Model)
+                    {
+                        var category = session.Questions.FirstOrDefault()?.Category ?? "General";
+                        var bgClass = session.Score >= 80 ? "bg-success" : session.Score >= 60 ? "bg-warning text-dark" : "bg-danger";
+                        
+                        <tr>
+                            <td class="px-4 text-muted">@session.Date.ToString("MMM dd, yyyy HH:mm")</td>
+                            <td class="fw-medium">@category</td>
+                            <td class="text-center">@session.Questions.Count</td>
+                            <td class="text-center">
+                                <span class="badge rounded-pill @bgClass px-3 py-2 fs-6">
+                                    @session.Score
+                                </span>
+                            </td>
+                            <td class="text-end pe-4">
+                                <a asp-controller="Interview" asp-action="Result" asp-route-sessionId="@session.SessionId" class="btn btn-sm btn-secondary-modern">View Report</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        }
+        else
+        {
+            <div class="card-modern text-center p-5 mt-4">
+                <div class="mb-4" style="font-size: 3rem;">🕒</div>
+                <h4 class="fw-bold mb-3">No history found</h4>
+                <p class="text-muted mb-4 fs-5">You haven't taken any interviews yet. Start one now to build your record!</p>
+                <a asp-controller="Interview" asp-action="Setup" class="btn btn-primary-modern px-4 py-2">Start First Interview</a>
+            </div>
+        }
+    </div>
+</div>

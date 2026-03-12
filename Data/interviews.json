@@ -1,0 +1,526 @@
+[
+  {
+    "SessionId": "205f81d7-7886-4c31-9793-d72da0b33fb6",
+    "InterviewTimeMinutes": 10,
+    "UserId": "GuestUser",
+    "Date": "2026-03-07T13:03:40.3926621+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "What is the difference between linear search and binary search?",
+        "Category": "DSA"
+      },
+      {
+        "Id": 2,
+        "Text": "How does the selection sort algorithm work?",
+        "Category": "DSA"
+      },
+      {
+        "Id": 3,
+        "Text": "Can you explain the concept of hashing and how it is used in data structures?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 2,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 3,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "What is the difference between linear search and binary search?",
+        "UserAnswer": "",
+        "IdealAnswer": "Linear search checks each element in the list sequentially from start to end, while binary search divides the list into halves and only checks the middle element of each half. Binary search is more efficient for sorted lists.",
+        "Score": 0,
+        "Feedback": "Please provide a detailed explanation of the differences between linear search and binary search."
+      },
+      {
+        "Question": "How does the selection sort algorithm work?",
+        "UserAnswer": "",
+        "IdealAnswer": "Selection sort repeatedly finds the minimum element in the unsorted part of the list and swaps it with the first unsorted element. This process is repeated until the entire list is sorted.",
+        "Score": 0,
+        "Feedback": "Please provide a clear explanation of how the selection sort algorithm functions."
+      },
+      {
+        "Question": "Can you explain the concept of hashing and how it is used in data structures?",
+        "UserAnswer": "",
+        "IdealAnswer": "Hashing is a technique used to map data to a fixed-size table called a hash table using a hash function. Hashing is used in data structures like hash maps and hash sets to efficiently store and retrieve data.",
+        "Score": 0,
+        "Feedback": "Please elaborate on the concept of hashing and how it is applied in data structures."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "The candidate needs to provide detailed explanations for technical questions and demonstrate a better understanding of key concepts in computer science."
+  },
+  {
+    "SessionId": "1b3eab5b-b69f-403b-b380-11f18628b973",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-07T13:08:27.6091654+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "What is the RAG (Red, Amber, Green) model in AIML and how is it used?",
+        "Category": "AIML"
+      },
+      {
+        "Id": 2,
+        "Text": "How does the RAG model help in monitoring and assessing performance in AIML projects?",
+        "Category": "AIML"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "[Recorded Audio Transcribed]: User spoke for ~88 KB of audio data."
+      },
+      {
+        "QuestionId": 2,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "What is the RAG (Red, Amber, Green) model in AIML and how is it used?",
+        "UserAnswer": "[Recorded Audio Transcribed]: User spoke for ~88 KB of audio data.",
+        "IdealAnswer": "The RAG (Red, Amber, Green) model in AIML is a method used to categorize and visually represent the status of key performance indicators. Red typically represents areas that need urgent attention, Amber signifies areas that need monitoring, and Green indicates satisfactory performance. It is used to quickly assess the health of a project and prioritize actions.",
+        "Score": 0,
+        "Feedback": "The user provided a transcribed audio response which does not answer the question directly. They should provide a more concise explanation of the RAG model in AIML."
+      },
+      {
+        "Question": "How does the RAG model help in monitoring and assessing performance in AIML projects?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The RAG model helps in monitoring and assessing performance in AIML projects by providing a visual representation of key performance indicators. It allows stakeholders to quickly identify areas that need attention and prioritize actions accordingly.",
+        "Score": 0,
+        "Feedback": "The user did not provide an answer to this question. They should explain how the RAG model specifically aids in monitoring and assessing performance in AIML projects."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "The user should work on providing more direct and concise answers to the interview questions, and ensure they address each aspect of the question thoroughly."
+  },
+  {
+    "SessionId": "20370b4b-ee7d-4b67-a4f0-120ebaa36ddc",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-07T13:22:41.2425254+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain the concept of hashing and how it is used in data structures and algorithms.",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Hashing is used for hashing. "
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 1,
+    "Results": [
+      {
+        "Question": "Explain the concept of hashing and how it is used in data structures and algorithms.",
+        "UserAnswer": "Hashing is used for hashing.",
+        "IdealAnswer": "Hashing is a technique used to map data to a fixed-size array, known as a hash table, based on a specific function called a hash function. It is commonly used in data structures and algorithms to efficiently retrieve and store data, as it allows for quick retrieval of data based on a specific key.",
+        "Score": 1,
+        "Feedback": "Your answer is not detailed enough and lacks clarity. Try to provide a more thorough explanation."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Improve the depth and clarity of your explanations when discussing technical concepts."
+  },
+  {
+    "SessionId": "c197832b-ca6e-4f6c-a8e5-d6430e140068",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-07T13:29:31.9856406+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain Binary Search",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Explain Binary Search",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "A binary search is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. It continues this process until the target value is found or all elements have been eliminated.",
+        "Score": 0,
+        "Feedback": "The user did not provide an answer, which does not demonstrate understanding of the binary search algorithm."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "The main improvement needed is to provide a detailed explanation of the binary search algorithm. It is important to showcase understanding of the topic during interviews."
+  },
+  {
+    "SessionId": "bec718d2-2b86-4e61-a05e-036e10f8b265",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-08T21:21:00.8802917+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "What is the time complexity of Binary Search algorithm?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Time Complexity of binary search algorithm is O(n log n) ."
+      }
+    ],
+    "EvaluationStrictness": "Strict",
+    "Score": 30,
+    "Results": [
+      {
+        "Question": "What is the time complexity of Binary Search algorithm?",
+        "UserAnswer": "Time Complexity of binary search algorithm is O(n log n) .",
+        "IdealAnswer": "O(log n)",
+        "Score": 30,
+        "Feedback": "Partially correct. The time complexity of Binary Search algorithm is O(log n), not O(n log n)."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Provide more accurate and precise answers."
+  },
+  {
+    "SessionId": "93bbb816-2ca3-4ccf-af2b-1fa8f20237c3",
+    "InterviewTimeMinutes": 2,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T18:30:39.484211+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "[Mock] Explain a concept related to DSA?",
+        "Category": "DSA"
+      },
+      {
+        "Id": 2,
+        "Text": "[Mock] Explain a concept related to DSA?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 2,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Explain a concept related to DSA?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "Answer should have provided a clear and concise explanation of a concept related to Data Structures and Algorithms",
+        "Score": 0,
+        "Feedback": "The user did not provide any answer, which resulted in a score of 0. It is important to be prepared to discuss concepts related to DSA in an interview."
+      },
+      {
+        "Question": "Explain a concept related to DSA?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "Answer should have provided a clear and concise explanation of a concept related to Data Structures and Algorithms",
+        "Score": 0,
+        "Feedback": "The user did not provide any answer, which resulted in a score of 0. It is important to be prepared to discuss concepts related to DSA in an interview."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "The user needs to work on being able to articulate concepts related to Data Structures and Algorithms. It is important to have a strong understanding of these concepts for technical interviews."
+  },
+  {
+    "SessionId": "9e756155-112d-42f2-bc23-8978d6cec6d8",
+    "InterviewTimeMinutes": 1,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T18:33:57.6972015+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain the concept of Big O notation in relation to algorithm efficiency.",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Big O notation is a worst case complexity for any algorithm in DSA."
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 2,
+    "Results": [
+      {
+        "Question": "Explain the concept of Big O notation in relation to algorithm efficiency.",
+        "UserAnswer": "Big O notation is a worst case complexity for any algorithm in DSA.",
+        "IdealAnswer": "Big O notation is a way to describe the performance or complexity of an algorithm. It gives an upper bound on the growth rate of functions that represent the runtime of an algorithm in terms of the input size.",
+        "Score": 2,
+        "Feedback": "The user answer is partially correct but lacks depth in explanation. It would be beneficial to provide more details about how Big O notation relates to algorithm efficiency."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Provide a more thorough explanation of concepts related to algorithm efficiency and Big O notation."
+  },
+  {
+    "SessionId": "caef00ef-4a5e-453d-bea9-2e6265eaeb41",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T18:36:14.0654798+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "[Mock] Explain a concept related to DSA?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Explain a concept related to DSA",
+        "UserAnswer": "",
+        "IdealAnswer": "The ideal answer would include a detailed explanation of a concept related to Data Structures and Algorithms, providing examples and demonstrating a clear understanding of the topic.",
+        "Score": 0,
+        "Feedback": "No answer provided. Please make sure to actively engage in answering the question to demonstrate your knowledge."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "It is important to actively engage in answering questions and provide detailed explanations to showcase your understanding of the topic."
+  },
+  {
+    "SessionId": "e117f29f-589d-42da-b285-64ff6b9c7c75",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T20:17:10.5939796+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain a concept from your resume.",
+        "Category": "Resume"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Explain a concept from your resume.",
+        "UserAnswer": "",
+        "IdealAnswer": "The candidate failed to provide an answer to this question.",
+        "Score": 0,
+        "Feedback": "Candidate needs to demonstrate an understanding of the concepts listed on their resume."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Candidate should be prepared to discuss concepts listed on their resume in future interviews."
+  },
+  {
+    "SessionId": "dcb76693-9af7-42ff-aa27-a17c155e1cfb",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T20:53:19.3282523+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Can you explain a project where you designed an end-to-end posture evaluation pipeline using MediaPipe and how it contributed to the overall goal of the project?",
+        "Category": "Resume"
+      },
+      {
+        "Id": 2,
+        "Text": "How did you go about training the RandomForest classifier for push-up posture classification and what challenges did you face during this process?",
+        "Category": "Resume"
+      },
+      {
+        "Id": 3,
+        "Text": "Can you discuss the methodology behind the weighted multi-criteria ranking model you developed for intelligent hospital recommendation and how it improved the accuracy of the recommendations?",
+        "Category": "Resume"
+      },
+      {
+        "Id": 4,
+        "Text": "In your experience with AI systems, can you provide an example of a project where you integrated Flask backend for real-time inference and how it enhanced the system\u0027s performance?",
+        "Category": "Resume"
+      },
+      {
+        "Id": 5,
+        "Text": "Tell us about a time when you implemented role-based authentication using Flask sessions for a project. What security considerations did you keep in mind during this implementation?",
+        "Category": "Resume"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 2,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 3,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 4,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 5,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Can you explain a project where you designed an end-to-end posture evaluation pipeline using MediaPipe and how it contributed to the overall goal of the project?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The ideal answer would have provided a detailed explanation of the project, including the specific steps taken to design the posture evaluation pipeline using MediaPipe and how it directly contributed to the overall goal of the project.",
+        "Score": 0,
+        "Feedback": "Not providing an answer to this question does not showcase the candidate\u0027s technical skills and experience in implementing AI systems."
+      },
+      {
+        "Question": "How did you go about training the RandomForest classifier for push-up posture classification and what challenges did you face during this process?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The ideal answer would have discussed the methodology used to train the RandomForest classifier for push-up posture classification, as well as any challenges faced during the training process.",
+        "Score": 0,
+        "Feedback": "Failing to provide an answer to this question does not demonstrate the candidate\u0027s ability to overcome challenges in machine learning model training."
+      },
+      {
+        "Question": "Can you discuss the methodology behind the weighted multi-criteria ranking model you developed for intelligent hospital recommendation and how it improved the accuracy of the recommendations?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The ideal answer would have outlined the methodology behind the weighted multi-criteria ranking model developed for intelligent hospital recommendation, as well as how it specifically enhanced the accuracy of the recommendations.",
+        "Score": 0,
+        "Feedback": "Not responding to this question neglects the opportunity to showcase the candidate\u0027s expertise in developing recommendation systems."
+      },
+      {
+        "Question": "In your experience with AI systems, can you provide an example of a project where you integrated Flask backend for real-time inference and how it enhanced the system\u0027s performance?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The ideal answer would have provided a specific project example where Flask backend was integrated for real-time inference in an AI system, along with details on how this integration improved system performance.",
+        "Score": 0,
+        "Feedback": "Lack of response to this question does not highlight the candidate\u0027s experience in deploying AI systems with real-time capabilities."
+      },
+      {
+        "Question": "Tell us about a time when you implemented role-based authentication using Flask sessions for a project. What security considerations did you keep in mind during this implementation?",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "The ideal answer would have described a previous project where role-based authentication was implemented using Flask sessions, and the specific security considerations that were taken into account during the implementation.",
+        "Score": 0,
+        "Feedback": "Failing to address this question does not demonstrate the candidate\u0027s understanding of security principles in web application development."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "The candidate should work on providing detailed responses to technical questions related to AI system design, machine learning model training, recommendation systems, integration of Flask backend, and security considerations in web development."
+  },
+  {
+    "SessionId": "0ea3161b-3197-4014-be1c-5371aee3f13a",
+    "InterviewTimeMinutes": 1,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T21:04:55.6709099+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Can you explain the difference between RandomForest and LSTM models in machine learning?",
+        "Category": "Resume"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "yes randomforest is a classifier and regression model and lstm is longest short term memory so this both is Good. Just this. "
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 2,
+    "Results": [
+      {
+        "Question": "Can you explain the difference between RandomForest and LSTM models in machine learning?",
+        "UserAnswer": "Yes randomforest is a classifier and regression model and lstm is longest short term memory so this both is Good.",
+        "IdealAnswer": "Random Forest is an ensemble learning method that operates by constructing a multitude of decision trees during training and outputting the mode of the classes or mean prediction of the individual trees. LSTM, on the other hand, is a type of recurrent neural network architecture capable of learning long-term dependencies. They are used for different types of tasks and have different architectural characteristics.",
+        "Score": 2,
+        "Feedback": "The answer provided lacks depth and precision in explaining the specific differences between RandomForest and LSTM models. It would be helpful to elaborate on the different use cases and functionalities of each model."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Provide more detailed and accurate explanations of technical concepts in machine learning."
+  },
+  {
+    "SessionId": "f7eb4dc7-1d19-4a0c-842f-a2de1a0bd87a",
+    "InterviewTimeMinutes": 1,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-12T23:26:07.9205381+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Can you explain the differences between RandomForest and LSTM models in machine learning?",
+        "Category": "Resume"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Yes. "
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 1,
+    "Results": [
+      {
+        "Question": "Can you explain the differences between RandomForest and LSTM models in machine learning?",
+        "UserAnswer": "Yes.",
+        "IdealAnswer": "The RandomForest model is an ensemble method that uses a collection of decision trees to make predictions, while the LSTM (Long Short-Term Memory) model is a type of neural network designed for sequence prediction tasks, particularly in text and time series data. RandomForest is considered a non-sequential model, while LSTM is a sequential model that can capture long-term dependencies.",
+        "Score": 1,
+        "Feedback": "The answer provided is insufficient and lacks detail. It does not explain the actual differences between the two models."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Provide a more detailed explanation of the differences between RandomForest and LSTM models in machine learning."
+  }
+]

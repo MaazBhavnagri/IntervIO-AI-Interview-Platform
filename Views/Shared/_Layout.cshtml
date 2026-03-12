@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AI Interview Simulator</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-light">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light navbar-modern sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span style="font-size: 1.4rem;">✨ IntervIO</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 ms-4">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Interview" asp-action="Setup">Start Interview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="History">History</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav align-items-center">
+                        @{
+                            var username = Context.Session.GetString("Username") ?? Context.Request.Cookies["Username"];
+                            if (!string.IsNullOrEmpty(username))
+                            {
+                                var initials = username.Length > 0 ? username.Substring(0, 1).ToUpper() : "U";
+                                
+                                <li class="nav-item d-flex align-items-center me-3">
+                                    <div class="avatar-circle shadow-sm me-2" title="@username">@initials</div>
+                                    <span class="fw-medium text-dark">@username</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-sm btn-outline-danger border-0 rounded-pill px-3 ms-2" asp-area="" asp-controller="Auth" asp-action="Logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="btn btn-secondary-modern me-2" asp-area="" asp-controller="Auth" asp-action="Login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-primary-modern" asp-area="" asp-controller="Auth" asp-action="Signup">Sign Up</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container fade-in mt-4">
+        <main role="main" class="pb-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted mt-5 py-3">
+        <div class="container">
+            &copy; 2026 - AI Interview Simulator
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom interview script -->
+    <script src="~/js/interview.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
