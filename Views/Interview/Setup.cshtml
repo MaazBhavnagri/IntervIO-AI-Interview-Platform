@@ -3,52 +3,58 @@
     ViewData["Title"] = "Interview Setup";
 }
 
-<div class="row justify-content-center align-items-center min-vh-75 fade-in">
-    <div class="col-md-8 col-lg-6">
-        <div class="card-modern">
-            <h2 class="text-center mb-4 fw-bold" style="color: var(--primary);">Interview Setup</h2>
-            <form asp-action="Generate" method="post" enctype="multipart/form-data">
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <label class="form-label-modern mb-3">Interview Type</label>
-                        <div class="d-flex gap-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="InterviewType" id="typeCategory" value="category" checked onchange="toggleInterviewType()">
-                                <label class="form-check-label" for="typeCategory">
-                                    Category Based Interview
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="InterviewType" id="typeResume" value="resume" onchange="toggleInterviewType()">
-                                <label class="form-check-label" for="typeResume">
-                                    Resume Based Interview
-                                </label>
-                            </div>
-                        </div>
+<div class="flex justify-center items-center min-h-[75vh]" data-aos="fade-up">
+    <div class="card w-full max-w-2xl bg-base-100 shadow-xl border border-gray-100">
+        <div class="card-body p-8">
+            <h2 class="card-title text-3xl font-bold justify-center mb-8 text-indigo-700">Interview Setup</h2>
+            <form asp-action="Generate" method="post" enctype="multipart/form-data" class="space-y-6">
+                
+                <!-- Interview Type Selection -->
+                <div class="form-control">
+                    <label class="label font-semibold text-gray-700">
+                        <span class="label-text text-base">Interview Type</span>
+                    </label>
+                    <div class="flex gap-6 mt-2">
+                        <label class="label cursor-pointer justify-start gap-3">
+                            <input type="radio" name="InterviewType" id="typeCategory" value="category" class="radio radio-primary" checked onchange="toggleInterviewType()" />
+                            <span class="label-text font-medium">Category Based</span>
+                        </label>
+                        <label class="label cursor-pointer justify-start gap-3">
+                            <input type="radio" name="InterviewType" id="typeResume" value="resume" class="radio radio-primary" onchange="toggleInterviewType()" />
+                            <span class="label-text font-medium">Resume Based</span>
+                        </label>
                     </div>
                 </div>
 
-                <div class="row mb-4" id="resumeUploadSection" style="display:none;">
-                    <div class="col-md-12">
-                        <label class="form-label-modern">Upload Resume</label>
-                        <input type="file" name="ResumeFile" class="form-control-modern w-100" accept=".pdf,.docx" />
-                    </div>
+                <!-- Resume Upload Section -->
+                <div id="resumeUploadSection" class="form-control w-full hidden animate-fade-in">
+                    <label class="label font-semibold text-gray-700">
+                        <span class="label-text text-base">Upload Resume (PDF/DOCX)</span>
+                    </label>
+                    <input type="file" name="ResumeFile" class="file-input file-input-bordered file-input-primary w-full" accept=".pdf,.docx" />
                 </div>
 
-                <div class="row mb-4">
-                    <div class="col-md-6 mb-3 mb-md-0" id="categorySection">
-                        <label asp-for="Category" class="form-label-modern">Category</label>
-                        <select asp-for="Category" class="form-select-modern w-100" id="categorySelect" onchange="toggleCustomCategory()">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Category Section -->
+                    <div id="categorySection" class="form-control w-full">
+                        <label asp-for="Category" class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Category</span>
+                        </label>
+                        <select asp-for="Category" class="select select-bordered w-full" id="categorySelect" onchange="toggleCustomCategory()">
                             <option value="DSA">DSA</option>
                             <option value="HR">HR</option>
                             <option value="System Design">System Design</option>
                             <option value="Other">Other</option>
                         </select>
-                        <input type="text" id="customCategory" name="CustomCategory" class="form-control-modern w-100 mt-2" placeholder="Enter custom category" style="display:none" />
+                        <input type="text" id="customCategory" name="CustomCategory" class="input input-bordered w-full mt-3 hidden animate-fade-in" placeholder="Enter custom category" />
                     </div>
-                    <div class="col-md-6">
-                        <label asp-for="Difficulty" class="form-label-modern">Difficulty</label>
-                        <select asp-for="Difficulty" class="form-select-modern w-100">
+
+                    <!-- Difficulty Section -->
+                    <div class="form-control w-full">
+                        <label asp-for="Difficulty" class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Difficulty</span>
+                        </label>
+                        <select asp-for="Difficulty" class="select select-bordered w-full">
                             <option value="Easy">Easy</option>
                             <option value="Medium" selected>Medium</option>
                             <option value="Hard">Hard</option>
@@ -56,44 +62,66 @@
                     </div>
                 </div>
 
-                <div class="row mb-4">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <label asp-for="QuestionCount" class="form-label-modern">Number of Questions</label>
-                        <input type="number"
-                               name="QuestionCount"
-                               value="3"
-                               min="1"
-                               max="20"
-                               class="form-control-modern w-100" />
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Settings -->
+                    <div class="form-control w-full">
+                        <label asp-for="QuestionCount" class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Number of Questions (1-20)</span>
+                        </label>
+                        <input type="number" name="QuestionCount" value="3" min="1" max="20" class="input input-bordered w-full" />
                     </div>
-                    <div class="col-md-6">
-                        <label asp-for="PreferredTopic" class="form-label-modern">Preferred Topic (Optional)</label>
-                        <input asp-for="PreferredTopic" class="form-control-modern w-100" placeholder="e.g. Binary Search" />
+                    
+                    <div class="form-control w-full">
+                        <label asp-for="PreferredTopic" class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Preferred Topic (Optional)</span>
+                        </label>
+                        <input asp-for="PreferredTopic" class="input input-bordered w-full" placeholder="e.g. Binary Search" />
                     </div>
                 </div>
 
-                <div class="row mb-5">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                        <label asp-for="EvaluationStrictness" class="form-label-modern">Evaluation Strictness</label>
-                        <select asp-for="EvaluationStrictness" class="form-select-modern w-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Advanced Settings -->
+                    <div class="form-control w-full">
+                        <label asp-for="EvaluationStrictness" class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Evaluation Strictness</span>
+                        </label>
+                        <select asp-for="EvaluationStrictness" class="select select-bordered w-full">
                             <option value="Normal" selected>Normal</option>
                             <option value="Strict">Strict</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label-modern">Interview Timer (minutes)</label>
-                        <input type="number" name="InterviewTimeMinutes" value="10" min="1" max="120" class="form-control-modern w-100" />
-                        <small class="text-muted d-block mt-1">Interview will automatically submit when timer ends.</small>
+                    
+                    <div class="form-control w-full">
+                        <label class="label font-semibold text-gray-700">
+                            <span class="label-text text-base">Interview Timer (minutes)</span>
+                        </label>
+                        <input type="number" name="InterviewTimeMinutes" value="10" min="1" max="120" class="input input-bordered w-full" />
+                        <label class="label">
+                            <span class="label-text-alt text-gray-500">Auto-submits when timer ends</span>
+                        </label>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary-modern w-100 py-3 fs-5">
-                    Start Interview
-                </button>
+                <div class="form-control mt-8 pt-4 border-t border-gray-100">
+                    <button type="submit" class="btn btn-primary w-full text-lg h-14 bg-indigo-600 hover:bg-indigo-700 border-none transition-all shadow-md mt-2">
+                        Start Interview
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+    /* Custom animation for toggling forms */
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 
 @section Scripts {
     <script>
@@ -102,8 +130,10 @@
             var input = document.getElementById("customCategory");
             if (select.value === "Other") {
                 input.style.display = "block";
+                input.classList.remove("hidden");
             } else {
                 input.style.display = "none";
+                input.classList.add("hidden");
                 input.value = "";
             }
         }
@@ -115,11 +145,22 @@
 
             if (typeCategory.checked) {
                 categorySection.style.display = "block";
+                categorySection.classList.remove("hidden");
+                
                 resumeUploadSection.style.display = "none";
+                resumeUploadSection.classList.add("hidden");
             } else {
                 categorySection.style.display = "none";
+                categorySection.classList.add("hidden");
+                
                 resumeUploadSection.style.display = "block";
+                resumeUploadSection.classList.remove("hidden");
             }
         }
+        
+        // Ensure correct initial state
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleInterviewType();
+        });
     </script>
 }

@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             timerElement.textContent = `${displayMinutes}:${displaySeconds}`;
             
+            if (timeLeft < 60) {
+                timerElement.classList.remove('text-dark');
+                timerElement.classList.add('text-danger');
+            }
+            
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 const form = document.getElementById('interviewForm');

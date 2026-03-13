@@ -5,45 +5,51 @@
     var timeMinutes = ViewBag.TimeMinutes != null ? (int)ViewBag.TimeMinutes : 10;
 }
 
-<div class="row min-vh-75 justify-content-center mt-4 fade-in">
-    <div class="col-md-10">
-        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
-            <h2 class="fw-bold mb-0">Interview Questions</h2>
-            <div class="text-end ms-auto me-4">
-                <div class="text-muted small mb-1 fw-bold">Interview Timer Remaining</div>
-                <div id="interviewTimer" class="fw-bold text-danger fs-4 font-monospace" data-minutes="@timeMinutes">@timeMinutes:00</div>
-            </div>
-            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">@Model.Count Questions</span>
+<div class="container mx-auto max-w-4xl py-8 fade-in">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 pb-6 mb-8 gap-4">
+        <div>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Interview Questions</h2>
+            <p class="text-gray-600 text-lg">Please provide your answers below. You can type or use the audio recorder.</p>
         </div>
-        <p class="text-muted mb-4 fs-5">Please provide your answers below. You can type or use the audio recorder.</p>
+        
+        <div class="flex items-center gap-6">
+            <span class="badge badge-primary badge-outline badge-lg px-4 py-3 font-semibold">@Model.Count Questions</span>
+            
+            <div class="text-right bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-100">
+                <div class="text-indigo-600 text-xs font-bold uppercase tracking-wider mb-1">Time Remaining</div>
+                <div id="interviewTimer" class="font-mono text-2xl font-bold text-gray-800" data-minutes="@timeMinutes">@timeMinutes:00</div>
+            </div>
+        </div>
+    </div>
 
-        <form asp-action="Submit" method="post" id="interviewForm">
-            <input type="hidden" name="sessionId" value="@sessionId" />
+    <form asp-action="Submit" method="post" id="interviewForm" class="space-y-8">
+        <input type="hidden" name="sessionId" value="@sessionId" />
 
-            @for (int i = 0; i < Model.Count; i++)
+        @for (int i = 0; i < Model.Count; i++)
         {
             var q = Model[i];
-            <div class="card-modern card-accent-border mb-5">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold shadow-sm" style="width: 32px; height: 32px; font-size: 0.9rem;">
-                        @(i + 1)
-                    </div>
-                    <h5 class="mb-0 ms-3 fw-bold text-dark">Question @(i + 1)</h5>
-                </div>
-                
-                <div class="card-body p-0 mt-3">
-                    <p class="fs-5 fw-medium text-dark mb-4">@q.Text</p>
-                    
-                    <div class="mb-4">
-                        <textarea name="answerTexts" class="form-control-modern w-100 answer-textarea" rows="5" placeholder="Type your comprehensive answer here..."></textarea>
+            <div class="card bg-base-100 shadow-md border border-gray-100 mb-8" data-aos="fade-up" data-aos-delay="@(i * 100)">
+                <div class="card-body p-6 sm:p-8">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold shadow-sm shrink-0 mt-1">
+                            @(i + 1)
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-bold text-gray-800 mb-2">Question @(i + 1)</h5>
+                            <p class="text-xl font-medium text-gray-900 leading-relaxed">@q.Text</p>
+                        </div>
                     </div>
                     
-                    <div class="d-flex align-items-center bg-light p-3 rounded-3 mt-3 border">
-                        <button type="button" class="btn btn-outline-danger me-3 record-btn d-flex align-items-center" style="border-radius: 8px;">
-                            <span class="fs-5 me-2">🎤</span> Record Answer
+                    <div class="mt-4">
+                        <textarea name="answerTexts" class="textarea textarea-bordered w-full h-40 text-base focus:border-indigo-500 answer-textarea bg-gray-50 focus:bg-white transition-colors" placeholder="Type your comprehensive answer here..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center bg-gray-50 border border-gray-200 p-4 rounded-xl mt-4">
+                        <button type="button" class="btn btn-outline btn-error record-btn flex items-center gap-2 mr-4">
+                            <span class="text-xl">🎤</span> Record Answer
                         </button>
-                        <span class="text-secondary recording-status fw-medium" style="display:none;">
-                            <span class="spinner-grow spinner-grow-sm text-danger me-2" role="status" aria-hidden="true"></span>
+                        <span class="text-gray-600 recording-status font-medium flex items-center gap-2 animate-pulse" style="display:none;">
+                            <span class="loading loading-ring loading-sm text-error"></span>
                             Listening... speak clearly.
                         </span>
                     </div>
@@ -51,11 +57,13 @@
             </div>
         }
 
-        <div class="text-end mt-5 mb-5 pb-5">
-            <button type="submit" class="btn btn-accent-modern btn-lg px-5 py-3 fs-5 shadow-sm">
-                Submit All Answers <span class="ms-2">✓</span>
+        <div class="flex justify-end mt-12 mb-8">
+            <button type="submit" class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none rounded-full px-10 py-4 h-auto text-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-3">
+                Submit All Answers 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
             </button>
         </div>
     </form>
-    </div>
 </div>

@@ -10,14 +10,12 @@ namespace AIInterviewPractice.Controllers
     public class InterviewController : Controller
     {
         private readonly InterviewService _interviewService;
-        private readonly SpeechService _speechService;
         private readonly ResumeService _resumeService;
         private readonly LLMService _llmService;
 
-        public InterviewController(InterviewService interviewService, SpeechService speechService, ResumeService resumeService, LLMService llmService)
+        public InterviewController(InterviewService interviewService, ResumeService resumeService, LLMService llmService)
         {
             _interviewService = interviewService;
-            _speechService = speechService;
             _resumeService = resumeService;
             _llmService = llmService;
         }
@@ -128,16 +126,6 @@ namespace AIInterviewPractice.Controllers
             if (session == null) return RedirectToAction("Index", "Home");
 
             return View(session);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> UploadAudio(IFormFile audioFile)
-        {
-            if (audioFile == null || audioFile.Length == 0)
-                return Json(new { success = false, message = "Empty audio file." });
-
-            var transcription = await _speechService.ConvertAudioToText(audioFile);
-            return Json(new { success = true, text = transcription });
         }
     }
 }

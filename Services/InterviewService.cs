@@ -112,6 +112,24 @@ namespace AIInterviewPractice.Services
             return ReadSessions().FirstOrDefault(s => s.SessionId == sessionId && s.UserId == userId);
         }
 
+        public bool DeleteSession(string sessionId)
+        {
+            var context = _httpContextAccessor.HttpContext;
+            var userId = context?.Session?.GetString("UserId") ?? context?.Request.Cookies["UserId"] ?? "GuestUser";
+            
+            var allSessions = ReadSessions();
+            var sessionToRemove = allSessions.FirstOrDefault(s => s.SessionId == sessionId && s.UserId == userId);
+            
+            if (sessionToRemove != null)
+            {
+                allSessions.Remove(sessionToRemove);
+                WriteSessions(allSessions);
+                return true;
+            }
+            
+            return false;
+        }
+
         public DashboardStats GetDashboardStats()
         {
             var context = _httpContextAccessor.HttpContext;

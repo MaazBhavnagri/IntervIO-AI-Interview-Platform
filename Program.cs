@@ -4,7 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient<AIInterviewPractice.Services.LLMService>();
-builder.Services.AddScoped<AIInterviewPractice.Services.SpeechService>();
 builder.Services.AddScoped<AIInterviewPractice.Services.UserService>();
 builder.Services.AddScoped<AIInterviewPractice.Services.InterviewService>();
 builder.Services.AddScoped<AIInterviewPractice.Services.ResumeService>();

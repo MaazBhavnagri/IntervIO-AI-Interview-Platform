@@ -30,5 +30,15 @@ namespace AIInterviewPractice.Controllers
             var sessions = _interviewService.GetAllSessions();
             return View(sessions);
         }
+
+        [HttpPost]
+        public IActionResult DeleteSession(string sessionId)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserId")) && string.IsNullOrEmpty(Request.Cookies["UserId"]))
+                return RedirectToAction("Login", "Auth");
+
+            _interviewService.DeleteSession(sessionId);
+            return RedirectToAction("History");
+        }
     }
 }

@@ -65,121 +65,6 @@
     "OverallImprovementSuggestions": "The candidate needs to provide detailed explanations for technical questions and demonstrate a better understanding of key concepts in computer science."
   },
   {
-    "SessionId": "1b3eab5b-b69f-403b-b380-11f18628b973",
-    "InterviewTimeMinutes": 10,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-07T13:08:27.6091654+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "What is the RAG (Red, Amber, Green) model in AIML and how is it used?",
-        "Category": "AIML"
-      },
-      {
-        "Id": 2,
-        "Text": "How does the RAG model help in monitoring and assessing performance in AIML projects?",
-        "Category": "AIML"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": "[Recorded Audio Transcribed]: User spoke for ~88 KB of audio data."
-      },
-      {
-        "QuestionId": 2,
-        "AnswerText": null
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 0,
-    "Results": [
-      {
-        "Question": "What is the RAG (Red, Amber, Green) model in AIML and how is it used?",
-        "UserAnswer": "[Recorded Audio Transcribed]: User spoke for ~88 KB of audio data.",
-        "IdealAnswer": "The RAG (Red, Amber, Green) model in AIML is a method used to categorize and visually represent the status of key performance indicators. Red typically represents areas that need urgent attention, Amber signifies areas that need monitoring, and Green indicates satisfactory performance. It is used to quickly assess the health of a project and prioritize actions.",
-        "Score": 0,
-        "Feedback": "The user provided a transcribed audio response which does not answer the question directly. They should provide a more concise explanation of the RAG model in AIML."
-      },
-      {
-        "Question": "How does the RAG model help in monitoring and assessing performance in AIML projects?",
-        "UserAnswer": "No answer provided",
-        "IdealAnswer": "The RAG model helps in monitoring and assessing performance in AIML projects by providing a visual representation of key performance indicators. It allows stakeholders to quickly identify areas that need attention and prioritize actions accordingly.",
-        "Score": 0,
-        "Feedback": "The user did not provide an answer to this question. They should explain how the RAG model specifically aids in monitoring and assessing performance in AIML projects."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "The user should work on providing more direct and concise answers to the interview questions, and ensure they address each aspect of the question thoroughly."
-  },
-  {
-    "SessionId": "20370b4b-ee7d-4b67-a4f0-120ebaa36ddc",
-    "InterviewTimeMinutes": 10,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-07T13:22:41.2425254+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "Explain the concept of hashing and how it is used in data structures and algorithms.",
-        "Category": "DSA"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": "Hashing is used for hashing. "
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 1,
-    "Results": [
-      {
-        "Question": "Explain the concept of hashing and how it is used in data structures and algorithms.",
-        "UserAnswer": "Hashing is used for hashing.",
-        "IdealAnswer": "Hashing is a technique used to map data to a fixed-size array, known as a hash table, based on a specific function called a hash function. It is commonly used in data structures and algorithms to efficiently retrieve and store data, as it allows for quick retrieval of data based on a specific key.",
-        "Score": 1,
-        "Feedback": "Your answer is not detailed enough and lacks clarity. Try to provide a more thorough explanation."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "Improve the depth and clarity of your explanations when discussing technical concepts."
-  },
-  {
-    "SessionId": "c197832b-ca6e-4f6c-a8e5-d6430e140068",
-    "InterviewTimeMinutes": 10,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-07T13:29:31.9856406+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "Explain Binary Search",
-        "Category": "DSA"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": null
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 0,
-    "Results": [
-      {
-        "Question": "Explain Binary Search",
-        "UserAnswer": "No answer provided",
-        "IdealAnswer": "A binary search is a search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array and eliminates half of the remaining elements based on the comparison. It continues this process until the target value is found or all elements have been eliminated.",
-        "Score": 0,
-        "Feedback": "The user did not provide an answer, which does not demonstrate understanding of the binary search algorithm."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "The main improvement needed is to provide a detailed explanation of the binary search algorithm. It is important to showcase understanding of the topic during interviews."
-  },
-  {
     "SessionId": "bec718d2-2b86-4e61-a05e-036e10f8b265",
     "InterviewTimeMinutes": 10,
     "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
@@ -211,121 +96,6 @@
     "Strengths": "Evaluated via AI model.",
     "Weaknesses": "",
     "OverallImprovementSuggestions": "Provide more accurate and precise answers."
-  },
-  {
-    "SessionId": "93bbb816-2ca3-4ccf-af2b-1fa8f20237c3",
-    "InterviewTimeMinutes": 2,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-12T18:30:39.484211+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "[Mock] Explain a concept related to DSA?",
-        "Category": "DSA"
-      },
-      {
-        "Id": 2,
-        "Text": "[Mock] Explain a concept related to DSA?",
-        "Category": "DSA"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": null
-      },
-      {
-        "QuestionId": 2,
-        "AnswerText": null
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 0,
-    "Results": [
-      {
-        "Question": "Explain a concept related to DSA?",
-        "UserAnswer": "No answer provided",
-        "IdealAnswer": "Answer should have provided a clear and concise explanation of a concept related to Data Structures and Algorithms",
-        "Score": 0,
-        "Feedback": "The user did not provide any answer, which resulted in a score of 0. It is important to be prepared to discuss concepts related to DSA in an interview."
-      },
-      {
-        "Question": "Explain a concept related to DSA?",
-        "UserAnswer": "No answer provided",
-        "IdealAnswer": "Answer should have provided a clear and concise explanation of a concept related to Data Structures and Algorithms",
-        "Score": 0,
-        "Feedback": "The user did not provide any answer, which resulted in a score of 0. It is important to be prepared to discuss concepts related to DSA in an interview."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "The user needs to work on being able to articulate concepts related to Data Structures and Algorithms. It is important to have a strong understanding of these concepts for technical interviews."
-  },
-  {
-    "SessionId": "9e756155-112d-42f2-bc23-8978d6cec6d8",
-    "InterviewTimeMinutes": 1,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-12T18:33:57.6972015+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "Explain the concept of Big O notation in relation to algorithm efficiency.",
-        "Category": "DSA"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": "Big O notation is a worst case complexity for any algorithm in DSA."
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 2,
-    "Results": [
-      {
-        "Question": "Explain the concept of Big O notation in relation to algorithm efficiency.",
-        "UserAnswer": "Big O notation is a worst case complexity for any algorithm in DSA.",
-        "IdealAnswer": "Big O notation is a way to describe the performance or complexity of an algorithm. It gives an upper bound on the growth rate of functions that represent the runtime of an algorithm in terms of the input size.",
-        "Score": 2,
-        "Feedback": "The user answer is partially correct but lacks depth in explanation. It would be beneficial to provide more details about how Big O notation relates to algorithm efficiency."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "Provide a more thorough explanation of concepts related to algorithm efficiency and Big O notation."
-  },
-  {
-    "SessionId": "caef00ef-4a5e-453d-bea9-2e6265eaeb41",
-    "InterviewTimeMinutes": 10,
-    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
-    "Date": "2026-03-12T18:36:14.0654798+05:30",
-    "Questions": [
-      {
-        "Id": 1,
-        "Text": "[Mock] Explain a concept related to DSA?",
-        "Category": "DSA"
-      }
-    ],
-    "Answers": [
-      {
-        "QuestionId": 1,
-        "AnswerText": null
-      }
-    ],
-    "EvaluationStrictness": "Normal",
-    "Score": 0,
-    "Results": [
-      {
-        "Question": "Explain a concept related to DSA",
-        "UserAnswer": "",
-        "IdealAnswer": "The ideal answer would include a detailed explanation of a concept related to Data Structures and Algorithms, providing examples and demonstrating a clear understanding of the topic.",
-        "Score": 0,
-        "Feedback": "No answer provided. Please make sure to actively engage in answering the question to demonstrate your knowledge."
-      }
-    ],
-    "Strengths": "Evaluated via AI model.",
-    "Weaknesses": "",
-    "OverallImprovementSuggestions": "It is important to actively engage in answering questions and provide detailed explanations to showcase your understanding of the topic."
   },
   {
     "SessionId": "e117f29f-589d-42da-b285-64ff6b9c7c75",
@@ -522,5 +292,252 @@
     "Strengths": "Evaluated via AI model.",
     "Weaknesses": "",
     "OverallImprovementSuggestions": "Provide a more detailed explanation of the differences between RandomForest and LSTM models in machine learning."
+  },
+  {
+    "SessionId": "6860fb9a-ec7b-419e-b04c-f96aeea3bfa9",
+    "InterviewTimeMinutes": 2,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T06:53:03.3791555+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain a core concept related to Artificial intelligence.",
+        "Category": "Artificial intelligence"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Machine learning is a part of artificial intelligence where computers learn patterns from data instead of being explicit program for every rule in simple word instead of telling the computer how to solve a problem step by step. We give better examples and it learns a pattern. "
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 72,
+    "Results": [
+      {
+        "Question": "Explain a core concept related to Artificial intelligence.",
+        "UserAnswer": "Machine learning is a part of artificial intelligence where computers learn patterns from data instead of being explicit program for every rule in simple word instead of telling the computer how to solve a problem step by step. We give better examples and it learns a pattern. ",
+        "IdealAnswer": "An ideal answer covers the concept fully and clearly.",
+        "Score": 50,
+        "Feedback": "Mock evaluation feedback based on missing OpenRouter valid key."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "This is placeholder feedback. Ensure you answer everything thoroughly."
+  },
+  {
+    "SessionId": "2c2f7b62-dd9c-4f0d-a074-8d0535f3e5f1",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T07:13:03.2047701+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "What is the difference between an array and a linked list?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "An array stores elements in contiguous memory and allows fast indexing, while a linked list stores elements as nodes connected by pointers and allows efficient insertion/deletion."
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 69,
+    "Results": [
+      {
+        "Question": "What is the difference between an array and a linked list?",
+        "UserAnswer": "An array stores elements in contiguous memory and allows fast indexing, while a linked list stores elements as nodes connected by pointers and allows efficient insertion/deletion.",
+        "IdealAnswer": "An ideal answer covers the concept fully and clearly.",
+        "Score": 86,
+        "Feedback": "Mock evaluation feedback based on missing OpenRouter valid key."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "This is placeholder feedback. Ensure you answer everything thoroughly."
+  },
+  {
+    "SessionId": "836924ae-7e51-49e8-9157-80899a35de93",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T07:16:33.6534084+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain the difference between depth-first search (DFS) and breadth-first search (BFS) traversal algorithms and provide an example of when each would be most appropriate to use.",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Depth-First Search (DFS) explores a graph by going as deep as possible along one branch before backtracking, usually using a stack or recursion.\r\nBreadth-First Search (BFS) explores nodes level by level, visiting all neighbors first, using a queue.\r\nDFS is useful when you want to explore all possible paths, like solving a maze or backtracking problems.\r\nBFS is best when you need the shortest path in an unweighted graph, such as finding the minimum number of steps between two nodes."
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 60,
+    "Results": [
+      {
+        "Question": "Explain the difference between depth-first search (DFS) and breadth-first search (BFS) traversal algorithms and provide an example of when each would be most appropriate to use.",
+        "UserAnswer": "Depth-First Search (DFS) explores a graph by going as deep as possible along one branch before backtracking, usually using a stack or recursion.\r\nBreadth-First Search (BFS) explores nodes level by level, visiting all neighbors first, using a queue.\r\nDFS is useful when you want to explore all possible paths, like solving a maze or backtracking problems.\r\nBFS is best when you need the shortest path in an unweighted graph, such as finding the minimum number of steps between two nodes.",
+        "IdealAnswer": "An ideal answer covers the concept fully and clearly.",
+        "Score": 52,
+        "Feedback": "Mock evaluation feedback based on missing OpenRouter valid key."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "This is placeholder feedback. Ensure you answer everything thoroughly."
+  },
+  {
+    "SessionId": "b346b556-9564-4b34-b857-c95184ad0171",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T07:26:06.3856802+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "What is the importance of time complexity in algorithm analysis and design?",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Time complexity measures how the running time of an algorithm grows as the input size increases. It is important because it helps developers compare different algorithms and choose the most efficient one. An algorithm with better time complexity can handle large datasets faster and use fewer computational resources. It also helps in predicting performance and scalability when designing systems. Common notations like O(n), O(log n), and O(n\u00B2) are used to represent time complexity."
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 9,
+    "Results": [
+      {
+        "Question": "What is the importance of time complexity in algorithm analysis and design?",
+        "UserAnswer": "Time complexity measures how the running time of an algorithm grows as the input size increases. It is important because it helps developers compare different algorithms and choose the most efficient one. An algorithm with better time complexity can handle large datasets faster and use fewer computational resources. It also helps in predicting performance and scalability when designing systems. Common notations like O(n), O(log n), and O(n\u00B2) are used to represent time complexity.",
+        "IdealAnswer": "Time complexity is crucial in algorithm analysis and design because it quantifies how the running time of an algorithm increases with the size of the input. This allows developers to compare different algorithms and choose the most efficient one. Algorithms with better time complexity can handle larger datasets more effectively and use fewer computational resources. Additionally, time complexity aids in predicting the performance and scalability of systems being designed. Common notations such as O(n), O(log n), and O(n\u00B2) are used to express time complexity.",
+        "Score": 9,
+        "Feedback": "Your answer is comprehensive and provides a good understanding of the importance of time complexity in algorithm analysis and design. Try to align your answer more closely with the ideal answer provided."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Align your answer more closely with the ideal answer provided."
+  },
+  {
+    "SessionId": "a2bdd870-f628-4da1-a41a-abc9e3a443ef",
+    "InterviewTimeMinutes": 3,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T07:35:58.9630907+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Can you explain the difference between RandomForest and LSTM models in machine learning?",
+        "Category": "Resume"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": "Random Forest and LSTM are two very different machine learning models designed for different types of problems.\r\n\r\nRandom Forest is a tree-based algorithm that builds many decision trees and combines their results to make a prediction. It works well with structured/tabular data like numbers, features, or datasets with columns (e.g., predicting house prices or classifying exercise form from joint angles).\r\n\r\nLSTM (Long Short-Term Memory) is a type of recurrent neural network (RNN) designed to learn sequential or time-series data. It remembers past information, so it is useful for tasks like speech recognition, text prediction, or analyzing sequences of video frames.\r\n\r\nIn short, Random Forest is best for static feature data, while LSTM is best for data where the order or time sequence matters (like motion or language). For example, in an exercise-analysis system, Random Forest can classify poses from angles, while LSTM can analyze movement over time."
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 70,
+    "Results": [
+      {
+        "Question": "Can you explain the difference between RandomForest and LSTM models in machine learning?",
+        "UserAnswer": "Random Forest and LSTM are two very different machine learning models designed for different types of problems. Random Forest is a tree-based algorithm that builds many decision trees and combines their results to make a prediction. It works well with structured/tabular data like numbers, features, or datasets with columns (e.g., predicting house prices or classifying exercise form from joint angles). LSTM (Long Short-Term Memory) is a type of recurrent neural network (RNN) designed to learn sequential or time-series data. It remembers past information, so it is useful for tasks like speech recognition, text prediction, or analyzing sequences of video frames. In short, Random Forest is best for static feature data, while LSTM is best for data where the order or time sequence matters (like motion or language). For example, in an exercise-analysis system, Random Forest can classify poses from angles, while LSTM can analyze movement over time.",
+        "IdealAnswer": "Random Forest is a tree-based ensemble learning method that operates by constructing a multitude of decision trees during training and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees. It is suitable for structured/tabular data. On the other hand, LSTM (Long Short-Term Memory) is a type of recurrent neural network (RNN) designed to work with sequential data and learn dependencies over time. It is useful for tasks such as speech recognition, language modeling, and time series prediction. In summary, Random Forest is best suited for static data with features, while LSTM is ideal for data that has a temporal component or requires capturing long-term dependencies.",
+        "Score": 70,
+        "Feedback": "The answer provided is mostly correct and covers the key differences between Random Forest and LSTM models. However, it could be improved by mentioning that Random Forest operates by combining predictions from multiple decision trees, not just based on one tree. Additionally, specifying that LSTM is suitable for capturing long-term dependencies in data and mentioning that it has memory cells to store sequential information would further enhance the response."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Specify that Random Forest combines predictions from multiple decision trees. Mention that LSTM has memory cells to store sequential information and is suitable for capturing long-term dependencies in data."
+  },
+  {
+    "SessionId": "19388cfd-69a6-48f8-af38-87cef59b036d",
+    "InterviewTimeMinutes": 10,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T07:38:24.1985067+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Can you explain the concept of reinforcement learning in the context of artificial intelligence? Provide an example of how it can be used in practice.",
+        "Category": "Artificial intelligence"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 0,
+    "Results": [
+      {
+        "Question": "Can you explain the concept of reinforcement learning in the context of artificial intelligence? Provide an example of how it can be used in practice.",
+        "UserAnswer": "No answer provided",
+        "IdealAnswer": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by taking actions in an environment to achieve a certain goal. The agent receives feedback in the form of rewards or penalties based on the actions it takes. An example of reinforcement learning in practice is training a computer program to play a game, where the program receives a positive reward for winning and a negative reward for losing, ultimately learning the best strategies to win the game.",
+        "Score": 0,
+        "Feedback": "The answer provided is completely incorrect as no explanation or example was given for reinforcement learning in the context of artificial intelligence."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "Provide a clear explanation of the concept of reinforcement learning and an example of how it can be used in practice."
+  },
+  {
+    "SessionId": "3f330874-a53c-4926-a8fa-b3b33d002a14",
+    "InterviewTimeMinutes": 5,
+    "UserId": "986655e2-07c8-4ec1-bcf8-04636f268369",
+    "Date": "2026-03-13T12:00:12.9842746+05:30",
+    "Questions": [
+      {
+        "Id": 1,
+        "Text": "Explain how a binary search algorithm works.",
+        "Category": "DSA"
+      },
+      {
+        "Id": 2,
+        "Text": "Explain how a binary search algorithm works.",
+        "Category": "DSA"
+      }
+    ],
+    "Answers": [
+      {
+        "QuestionId": 1,
+        "AnswerText": null
+      },
+      {
+        "QuestionId": 2,
+        "AnswerText": null
+      }
+    ],
+    "EvaluationStrictness": "Normal",
+    "Score": 76,
+    "Results": [
+      {
+        "Question": "Explain how a binary search algorithm works.",
+        "UserAnswer": "",
+        "IdealAnswer": "An ideal answer covers the concept fully and clearly.",
+        "Score": 66,
+        "Feedback": "Mock evaluation feedback based on missing OpenRouter valid key."
+      },
+      {
+        "Question": "Explain how a binary search algorithm works.",
+        "UserAnswer": "",
+        "IdealAnswer": "An ideal answer covers the concept fully and clearly.",
+        "Score": 75,
+        "Feedback": "Mock evaluation feedback based on missing OpenRouter valid key."
+      }
+    ],
+    "Strengths": "Evaluated via AI model.",
+    "Weaknesses": "",
+    "OverallImprovementSuggestions": "This is placeholder feedback. Ensure you answer everything thoroughly."
   }
 ]

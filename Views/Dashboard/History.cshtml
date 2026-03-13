@@ -3,58 +3,72 @@
     ViewData["Title"] = "Interview History";
 }
 
-<div class="row min-vh-75 mt-4 fade-in">
-    <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold text-dark mb-0">Interview History</h2>
-            <a asp-controller="Interview" asp-action="Setup" class="btn btn-primary-modern shadow-sm px-4">New Interview <span class="ms-2">+</span></a>
-        </div>
+<div class="container mx-auto py-8 fade-in">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 border-b border-gray-200 pb-4">
+        <h2 class="text-3xl font-extrabold text-gray-900">Interview History</h2>
+        <a asp-controller="Interview" asp-action="Setup" class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none rounded-full px-6 shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+            New Interview 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>
 
-        @if (Model.Any())
-        {
-            <div class="table-responsive">
-                <table class="table table-modern w-100">
-                    <thead>
+    @if (Model.Any())
+    {
+        <div class="card bg-base-100 shadow-md border border-gray-100 overflow-hidden" data-aos="fade-up">
+            <div class="overflow-x-auto w-full">
+                <table class="table w-full">
+                    <!-- head -->
+                    <thead class="bg-gray-50 text-gray-700 uppercase text-sm">
                         <tr>
-                            <th>Date</th>
-                            <th>Category</th>
-                            <th class="text-center">Questions</th>
-                            <th class="text-center">Score</th>
-                            <th class="text-end pe-4">Action</th>
+                            <th class="py-4 px-6 font-semibold">Date</th>
+                            <th class="py-4 px-6 font-semibold">Category</th>
+                            <th class="py-4 px-6 text-center font-semibold">Questions</th>
+                            <th class="py-4 px-6 text-center font-semibold">Score</th>
+                            <th class="py-4 px-6 text-right font-semibold">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-gray-800">
                     @foreach (var session in Model)
                     {
                         var category = session.Questions.FirstOrDefault()?.Category ?? "General";
-                        var bgClass = session.Score >= 80 ? "bg-success" : session.Score >= 60 ? "bg-warning text-dark" : "bg-danger";
+                        var badgeClass = session.Score >= 80 ? "badge-success text-white" : session.Score >= 60 ? "badge-warning" : "badge-error text-white";
                         
-                        <tr>
-                            <td class="px-4 text-muted">@session.Date.ToString("MMM dd, yyyy HH:mm")</td>
-                            <td class="fw-medium">@category</td>
-                            <td class="text-center">@session.Questions.Count</td>
-                            <td class="text-center">
-                                <span class="badge rounded-pill @bgClass px-3 py-2 fs-6">
+                        <tr class="hover:bg-indigo-50/30 transition-colors border-b border-gray-100">
+                            <td class="py-4 px-6 whitespace-nowrap text-gray-500 font-medium">@session.Date.ToString("MMM dd, yyyy HH:mm")</td>
+                            <td class="py-4 px-6 font-semibold text-gray-700">@category</td>
+                            <td class="py-4 px-6 text-center font-medium">@session.Questions.Count</td>
+                            <td class="py-4 px-6 text-center">
+                                <span class="badge @badgeClass badge-lg px-3 py-3 font-bold">
                                     @session.Score
                                 </span>
                             </td>
-                            <td class="text-end pe-4">
-                                <a asp-controller="Interview" asp-action="Result" asp-route-sessionId="@session.SessionId" class="btn btn-sm btn-secondary-modern">View Report</a>
+                            <td class="py-4 px-6 text-right whitespace-nowrap">
+                                <form asp-controller="Dashboard" asp-action="DeleteSession" method="post" class="inline-flex items-center gap-2">
+                                    <input type="hidden" name="sessionId" value="@session.SessionId" />
+                                    <a asp-controller="Interview" asp-action="Result" asp-route-sessionId="@session.SessionId" class="btn btn-sm btn-outline border-indigo-200 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-300 rounded-md">View Report</a>
+                                    <button type="submit" class="btn btn-sm btn-ghost text-error hover:bg-red-50 rounded-md" onclick="return confirm('Are you sure you want to permanently delete this interview report?');">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     }
-                </tbody>
-            </table>
-        </div>
-        }
-        else
-        {
-            <div class="card-modern text-center p-5 mt-4">
-                <div class="mb-4" style="font-size: 3rem;">🕒</div>
-                <h4 class="fw-bold mb-3">No history found</h4>
-                <p class="text-muted mb-4 fs-5">You haven't taken any interviews yet. Start one now to build your record!</p>
-                <a asp-controller="Interview" asp-action="Setup" class="btn btn-primary-modern px-4 py-2">Start First Interview</a>
+                    </tbody>
+                </table>
             </div>
-        }
-    </div>
+        </div>
+    }
+    else
+    {
+        <div class="card bg-indigo-50/50 shadow-sm border border-indigo-100 text-center p-12 mt-8 max-w-2xl mx-auto" data-aos="zoom-in">
+            <div class="text-6xl mb-6">🕒</div>
+            <h3 class="text-3xl font-extrabold text-gray-800 mb-4">No history found</h3>
+            <p class="text-gray-500 text-lg mb-8 leading-relaxed">You haven't taken any interviews yet. Start one now to build your record!</p>
+            <a asp-controller="Interview" asp-action="Setup" class="btn bg-indigo-600 hover:bg-indigo-700 text-white border-none rounded-full px-8 py-3 h-auto text-lg shadow-md hover:shadow-lg transition-all">Start First Interview</a>
+        </div>
+    }
 </div>

@@ -18,7 +18,7 @@ namespace AIInterviewPractice.Services
         public LLMService(HttpClient httpClient, IConfiguration configuration)
         {
             _httpClient = httpClient;
-            // Get the API key from appsettings.json
+            
             _apiKey = configuration["OpenRouterApiKey"] ?? ""; 
         }
 
@@ -45,7 +45,7 @@ namespace AIInterviewPractice.Services
 
             var requestBody = new
             {
-                model = "openai/gpt-3.5-turbo", // Use a generic model string supported by OpenRouter
+                model = "openai/gpt-3.5-turbo",
                 messages = new[]
                 {
                     new { role = "user", content = prompt }
@@ -58,7 +58,7 @@ namespace AIInterviewPractice.Services
 
             try
             {
-                // Un-comment to actually call the API, if you provide a valid key in appsettings.json.
+                
                 if (!string.IsNullOrEmpty(_apiKey))
                 {
                     var response = await _httpClient.SendAsync(request);
@@ -66,20 +66,14 @@ namespace AIInterviewPractice.Services
 
                     var responseBody = await response.Content.ReadAsStringAsync();
                     
-                    // Parse the response from OpenRouter
-                    using var jsonDoc = JsonDocument.Parse(responseBody);
-                    var content = jsonDoc.RootElement
-                                    .GetProperty("choices")[0]
-                                    .GetProperty("message")
-                                    .GetProperty("content")
-                                    .GetString() ?? "[]";
-
-                    content = content
-                                    .Replace("```json", "")
-                                    .Replace("```", "")
-                                    .Trim();
                     
-                    var generatedList = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(content);
+                    using var jsonDoc = JsonDocument.Parse(responseBody);
+                    var content = jsonDoc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString() ?? "[]";
+
+                    content = content.Replace("```json", "").Replace("```", "").Trim();
+                    
+                    var options = new JsonSerializerOptions { AllowTrailingCommas = true, ReadCommentHandling = JsonCommentHandling.Skip };
+                    var generatedList = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(content, options);
                     
                     var apiQuestions = new List<InterviewQuestion>();
                     int apiId = 1;
@@ -103,7 +97,6 @@ namespace AIInterviewPractice.Services
                 Console.WriteLine($"Error calling LLM: {ex.Message}");
             }
             
-            // Safer Fallback if API fails or key is missing
             var fallback = new List<InterviewQuestion>();
             for (int i = 1; i <= settings.QuestionCount; i++)
             {
@@ -178,20 +171,13 @@ namespace AIInterviewPractice.Services
                     var responseBody = await response.Content.ReadAsStringAsync();
                     
                     using var jsonDoc = JsonDocument.Parse(responseBody);
-                    var content = jsonDoc.RootElement
-                                    .GetProperty("choices")[0]
-                                    .GetProperty("message")
-                                    .GetProperty("content")
-                                    .GetString() ?? "[]";
+                    var content = jsonDoc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString() ?? "[]";
 
                     Console.WriteLine("LLM response received");
 
-                    content = content
-                                    .Replace("```json", "")
-                                    .Replace("```", "")
-                                    .Trim();
-                                    
-                    var generatedList = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(content);
+                    content = content.Replace("```json", "").Replace("```", "").Trim();
+                    var options = new JsonSerializerOptions { AllowTrailingCommas = true, ReadCommentHandling = JsonCommentHandling.Skip };
+                    var generatedList = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(content, options);
                     
                     int apiId = 1;
                     foreach (var item in generatedList ?? new List<Dictionary<string, string>>())
@@ -229,8 +215,24 @@ namespace AIInterviewPractice.Services
         public async Task<LLMEvaluationResponse> EvaluateAnswersAsync(List<InterviewQuestion> questions, List<InterviewAnswer> answers, string strictness = "Normal")
         {
             var promptBuilder = new StringBuilder();
-            promptBuilder.AppendLine("Evaluate interview answers strictly.");
-            promptBuilder.AppendLine();
+
+            promptBuilder.AppendLine("You are a technical interviewer evaluating answers.");
+
+            promptBuilder.AppendLine("Evaluate each answer carefully.");
+
+            promptBuilder.AppendLine("Scoring rules:");
+            promptBuilder.AppendLine("0-20 = completely incorrect");
+            promptBuilder.AppendLine("20-40 = weak answer with little relevance");
+            promptBuilder.AppendLine("40-60 = partially correct but missing key ideas");
+            promptBuilder.AppendLine("60-80 = mostly correct with small gaps");
+            promptBuilder.AppendLine("80-100 = accurate and complete answer");
+
+            promptBuilder.AppendLine("For each question:");
+            promptBuilder.AppendLine("1. Determine the ideal answer.");
+            promptBuilder.AppendLine("2. Compare the user's answer with the ideal answer.");
+            promptBuilder.AppendLine("3. Assign a score based on similarity.");
+
+            promptBuilder.AppendLine("Do not give extremely low scores unless the answer is completely wrong.");
             
             if (strictness == "Strict")
             {
@@ -252,21 +254,7 @@ namespace AIInterviewPractice.Services
                 promptBuilder.AppendLine();
             }
 
-            promptBuilder.AppendLine(@"Return JSON format:
-
-{
-  ""questions"":[
-    {
-      ""question"":""string"",
-      ""userAnswer"":""string"",
-      ""idealAnswer"":""string"",
-      ""score"":0,
-      ""feedback"":""string""
-    }
-  ],
-  ""overallScore"":0,
-  ""mainImprovements"":""string""
-}");
+            promptBuilder.AppendLine(@"Return JSON format:{""questions"":[{""question"":""string"", ""userAnswer"":""string"", ""idealAnswer"":""string"", ""score"":0, ""feedback"":""string""}],""overallScore"":0,""mainImprovements"":""string""}");
 
             var requestBody = new
             {
@@ -299,7 +287,12 @@ namespace AIInterviewPractice.Services
 
                     content = content.Replace("```json", "").Replace("```", "").Trim();
                     
-                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                    var options = new JsonSerializerOptions 
+                    { 
+                        PropertyNameCaseInsensitive = true,
+                        AllowTrailingCommas = true,
+                        ReadCommentHandling = JsonCommentHandling.Skip 
+                    };
                     var result = JsonSerializer.Deserialize<LLMEvaluationResponse>(content, options);
                     
                     if (result != null) return result;
@@ -310,7 +303,6 @@ namespace AIInterviewPractice.Services
                 Console.WriteLine($"Error evaluating: {ex.Message}");
             }
 
-            // Fallback
             var mockResponse = new LLMEvaluationResponse
             {
                 OverallScore = new Random().Next(60, 95),
